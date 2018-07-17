@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ReqDpatcher extends HttpServlet 
 {
 
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
 	{
-		int sum=(int)req.getAttribute("sum");
-		PrintWriter out= res.getWriter();
-		out.println("Square using ReqDpatcher: "+sum);
+		System.out.println("4");
+		int sum=(int)request.getAttribute("sum");
+		PrintWriter out= response.getWriter();
+		out.println("Sum using ReqDpatcher: "+sum);
 	}
 }
