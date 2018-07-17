@@ -9,12 +9,6 @@ public class SendRdirect extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
-		
-		/*int sq=(int)req.getAttribute("sum");
-		PrintWriter out= res.getWriter();
-		out.println("Square using SendRedirect: "+sq);*/
-		
-		//PrintWriter out= res.getWriter();
 		System.out.println("I am SendRedirect servlet");
 	}
 }

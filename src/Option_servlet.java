@@ -1,5 +1,12 @@
 
+/* to pass value from server-1 to server-2:
+ * 1. Request Dispatcher using forward method with Request and Response as parameters.
+ * 2. SendRedirect method to server-1:
+ * 		a.URL rewriting
+ * 		b.Session
+ * 		c.cookies
 
+*/
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -28,27 +35,31 @@ public class Option_servlet extends HttpServlet
 				int sum= num1+num2;
 				System.out.println("sum"+sum);
 				request.setAttribute("sum", sum);
-				System.out.println("2");
 				RequestDispatcher rd=request.getRequestDispatcher("/RD");
-				System.out.println("3");
 				rd.forward(request,response); */
 				
 	//		}
 	//	else if(radio_val=="SendRedirect")
 	//		{
-				System.out.println("Square of a number using SendRdirect servlet");
+				/*System.out.println("Square of a number using SendRdirect servlet");
 				int num=Integer.parseInt(request.getParameter("Num"));
-				//System.out.println(num);
+				
 				int sq=num*num;
-				//System.out.println("2");
+				
 				PrintWriter out= response.getWriter();
-				//System.out.println("3");
 				out.println("Square using SendRedirect: "+sq);
-				//System.out.println("4");
-				//response.
-				//request.setAttribute("sq",sq);
-				response.sendRedirect("Square"); 
+				
+				response.sendRedirect("Square"); */
 		//	} 
+			
+	//else if(radio_val=="SendRedirect")
+	//		{
+				System.out.println("URL Rewritting: Square of a number using SendRdirect servlet");
+				int num=Integer.parseInt(request.getParameter("Num_a"));
+				int sq=num*num;																
+				response.sendRedirect("Square_url?sq="+sq); 
+		//	} 
+				
 	}
 
 }
